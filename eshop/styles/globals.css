@@ -31,12 +31,14 @@ width: 100%;
   justify-content: space-between;
   margin: 6px 18px;
   position: relative;
+  margin-bottom:20px;
+  margin-top:30px;
 }
 .marquee-text{
   font-size: 29px;
   font-weight: 600;
   margin: 60px 0px;
-  color: #f02d34;
+  color: #860e8f;
 }
 .marquee {
   position: relative;
@@ -61,15 +63,23 @@ width: 100%;
 }
 
  span.text-red {
-    -webkit-text-stroke: 1px #f02d34;
+    -webkit-text-stroke: 1px #860e8f;
     margin-left: 6px;
 }
 .logo{
   color: gray;
   font-size: 18px;
+  cursor:pointer;
 
 }
+
+.logo img{
+  max-width:300px;
+  height:auto;
+}
+
 .cart-icon{
+  right: 50px;
   font-size: 25px;
   color: gray;
   cursor: pointer;
@@ -86,7 +96,7 @@ width: 100%;
   right: -8px;
   font-size: 12px;
   color: #eee;
-  background-color: #f02d34;
+  background-color: #860e8f;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -130,7 +140,8 @@ width: 100%;
 
 .hero-banner-container{
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  background: url("/images/bg_banner_1.jpg");
+  background-size:cover;
   border-radius: 15px;
   position: relative;
   height: 500px;
@@ -144,7 +155,7 @@ width: 100%;
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #860e8f;
   color: white;
   border: none;
   margin-top: 40px;
@@ -153,15 +164,20 @@ width: 100%;
   cursor: pointer;
   z-index:10000 !important;
 }
+.hero-banner-container p{
+ font-weight:bold;
+ color:#fff;
 
+}
 .hero-banner-container h3{
   font-size: 4rem;
   margin-top: 4px;
+  color:#ddd;
 }
 .hero-banner-container h1{
   color: white;
   font-size: 10em;
-  margin-left: -20px;
+  margin-left: 0px;
   text-transform: uppercase;
 }
 .hero-banner-image{
@@ -170,16 +186,19 @@ width: 100%;
   right:20%;
   width: 450px;
   height: 450px;
+
+  
 }
 
 
-.desc{
+.desc{ 
+
 position: absolute;
-right: 10%;
+right: 3%;
 bottom: 5%;
 width: 300px;
 line-height: 1.3;
-display: flex;
+display: none;
 flex-direction: column;
  color: #324d67;
 
@@ -196,12 +215,39 @@ text-align: end;
   /* color: black; */
   align-self: flex-end;
 }
-.products-heading{
+.products-heading {
   text-align: center;
   margin: 40px 0px;
- color: #324d67;
+  color: #333;
 
 }
+
+.product-card p, .product-card h2{
+
+  padding: 20px;
+    text-align: center;
+    padding-bottom:0;
+}
+
+.product-card h2{
+  color:#860e8f;
+  padding-top:0;
+  font-family:Open+Sans;
+}
+
+.product-card h2 small{
+  color:#999;
+  font-size:14px;
+}
+
+
+.product-card {
+  text-align:center;
+}
+
+
+
+
 .products-heading h2{
   font-size: 40px;
   font-weight: 800;
@@ -209,10 +255,12 @@ text-align: end;
 .products-heading p{
   font-size: 16px;
   font-weight: 200;
+  color: #999;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background: url("/images/bg_banner_2.jpg");
+  background-size:cover;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -229,7 +277,7 @@ text-align: end;
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #860e8f;
   border: none;
   margin-top: 40px;
   font-size: 18px;
@@ -321,7 +369,7 @@ text-align: end;
 }
 .cart-num-items{
   margin-left: 10px;
-  color: #f02d34;
+  color: #860e8f;
 }
 .empty-cart{
   margin:40px;
@@ -377,7 +425,7 @@ padding: 20px 10px;
 }
 .remove-item{
   font-size: 24px;
-  color: #f02d34;
+  color: #860e8f;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -405,7 +453,7 @@ padding: 30px 65px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #860e8f;
   color: #fff;
   cursor: pointer;
     transform: scale(1, 1);
@@ -433,7 +481,7 @@ padding: 30px 65px;
   transition: .3s ease-in-out;
 }
 .product-detail-image:hover{
-  background-color: #f02d34;
+  background-color: #860e8f;
 
 }
 .small-images-container{
@@ -441,19 +489,20 @@ padding: 30px 65px;
   gap: 10px;
   margin-top: 20px;
 }
-.small-image{
+.small-image {
   border-radius: 8px;
   background-color: #ebebeb;
   width: 70px;
   height: 70px;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
-.selected-image{
-  background-color:#f02d34;
+.selected-image {
+  border-color: #860e8f;
 }
 .reviews{
-  color: #f02d34;
+  color: #860e8f;
   margin-top: 10px;
   display: flex;
   gap: 5px;
@@ -474,7 +523,7 @@ padding: 30px 65px;
   font-weight: 700 ;
   font-size: 26px;
   margin-top: 30px;
-  color:#f02d34;
+  color:#860e8f;
 }
 .price .old-price, .product-price .old-price, .price .old-price{
   color: gray;
@@ -492,12 +541,12 @@ padding: 30px 65px;
 }
 .buttons .add-to-cart{
   padding: 10px 20px;
-  border: 1px solid #f02d34 ;
+  border: 1px solid #860e8f ;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
   background-color: white;
-  color: #f02d34;
+  color: #860e8f;
   cursor: pointer;
   width: 200px;
    transform: scale(1, 1);
@@ -510,7 +559,7 @@ padding: 30px 65px;
   width: 200px;
 
   padding: 10px 20px;
-  background-color: #f02d34;
+  background-color: #860e8f;
   color: white;
   border: none;
   margin-top: 40px;
@@ -534,7 +583,7 @@ padding: 6px;
 }
 .quantity-desc .minus{
   border-right: 1px solid gray;
-  color: #f02d34;
+  color: red;
 }
 .quantity-desc .num{
   border-right: 1px solid gray;
@@ -544,14 +593,17 @@ padding: 6px;
   color: rgb(49, 168, 49);
 
 }
+.container-image-products{
+  margin:auto;
+}
 
 .maylike-products-wrapper{
   margin-top: 120px;
 }
 .maylike-products-wrapper h2{
   text-align: center;
-  margin: 50px;
-  color: #324d67;
+  margin: 0px;
+ 
 
   font-size: 28px;
 }
@@ -563,7 +615,7 @@ padding: 6px;
 }
 .max-qty{
   font-weight: 500;
-  color: #f02d34;
+  color: #860e8f;
 }
 .success-wrapper, .cancel-wrapper{
   background-color: white;
@@ -612,7 +664,7 @@ margin-top: 160px;
 }
 .success .description .email{
   margin-left: 5px;
-  color: #f02d34;
+  color: #860e8f;
 }
 .product-max-qty{
   margin-top: 10px;
@@ -620,13 +672,14 @@ margin-top: 160px;
 
 @media screen and (max-width:800px) {
   .hero-banner-container{
-    height: 560px;
+    height: 410px;
+    padding: 100px 20px;
   }
   .hero-banner-image{
     width: 77%;
-    height: 62%;
+    height: auto;
     top: -2%;
-    right: -6%;
+    right: -3%;
   }
   .footer-banner-container{
     height: 560px;

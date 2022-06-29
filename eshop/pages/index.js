@@ -1,29 +1,47 @@
 import React from 'react';
-
+import {client} from '../lib/client';
+import { Helmet } from 'react-helmet';
 
 import { Product, FooterBanner, HeroBanner } from '../components';
 
-const index = () => {
+const index = ({products, bannerD}) => {
   return (
     <>
-<HeroBanner/>
+      <Helmet>
+        <title>CesarCapital+</title>
+      </Helmet>
 
+<HeroBanner heroBanner={bannerD.length && bannerD[1]}  />
+  
 
 
 <div className="products-heading">
-  <h2> Best Selling Products </h2>
-  <p>Speakers of many variations</p>
+  <h2> Products on Sale </h2>
+  <p>Click on the product to know more details</p>
 </div>
 
 
 <div className="products-container">
-        {['Product 1', 'Product 2'].map(
-        (product) => product )} 
+        {products?.map(
+        (product) =>  <Product key={product._id} product={product} /> )} 
  </div>
 
- <FooterBanner/>
+ <FooterBanner footerBanner={bannerD && bannerD[0]} />
     
     </>
   )
 }
+
+export const getServerSideProps = async () => { 
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+
+  const bquery = '*[_type == "banner"]';
+  const bannerD = await client.fetch(bquery);
+
+  return {
+     props: {products, bannerD}
+  } 
+}
+
 export default index
