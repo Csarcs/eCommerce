@@ -2,9 +2,14 @@ import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
+    /*  const body_slug = req.body[0].slug.current;
+      const pathname = window.location.href; */
+      const main_return_link = req.headers.origin;
+     /* const main_return_link = req.headers.origin+"/"+body_slug; */
       const params = {
         submit_type: 'pay',
         mode: 'payment',
@@ -15,9 +20,13 @@ export default async function handler(req, res) {
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
-          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/on9o6aof/production/').replace('-webp', '.webp');
+          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/on9o6aof/production/').replace('-jpg', '.jpg');
+          
+         
+
 
           return {
+            
             price_data: { 
               currency: 'usd',
               product_data: { 
@@ -34,7 +43,7 @@ export default async function handler(req, res) {
           }
         }),
         success_url: `${req.headers.origin}/success`,
-        cancel_url: `${req.headers.origin}/canceled`,
+        cancel_url: `${main_return_link}?action=canceled`,
       }
 
       // Create Checkout Sessions from body params.

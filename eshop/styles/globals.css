@@ -597,6 +597,10 @@ padding: 6px;
   margin:auto;
 }
 
+.product-detail-desc{
+  width: 100%;
+}
+
 .maylike-products-wrapper{
   margin-top: 120px;
 }
